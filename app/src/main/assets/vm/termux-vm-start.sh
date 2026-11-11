@@ -25,6 +25,9 @@ if [ -f "$HOME/.termux/no-vm" ]; then
     exec "$SHELL" -l
 fi
 
+# 0. Symlink ke rootfs agar bisa diakses langsung dari shell Termux: ~/ubuntu-root
+ln -sfn "$ROOTFS" "$HOME/ubuntu-root" 2>/dev/null
+
 # 1. Pastikan proot-distro tersedia.
 if ! command -v proot-distro >/dev/null 2>&1; then
     echo "[VM] Memasang proot-distro..."

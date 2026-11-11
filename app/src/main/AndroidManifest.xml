@@ -230,6 +230,15 @@
             android:name="com.sec.android.support.multiwindow"
             android:value="true" />
 
+        <provider
+            android:name=".app.vm.VmDocumentsProvider"
+            android:authorities="com.termux.vmdocuments"
+            android:exported="true"
+            android:grantUriPermissions="true">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
     </application>
 
 </manifest>
