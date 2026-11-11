@@ -181,7 +181,7 @@ public class VmDocumentsProvider extends DocumentsProvider {
             String parent = getFile(parentDocumentId).getCanonicalPath();
             String child = getFile(documentId).getCanonicalPath();
             return child.startsWith(parent + File.separator);
-        } catch (IOException | FileNotFoundException e) {
+        } catch (IOException e) { // FileNotFoundException is an IOException
             return false;
         }
     }
